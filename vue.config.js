@@ -1,14 +1,4 @@
 module.exports = {
-  presets: [
-    'transform-remove-console',
-    '@vue/cli-plugin-babel/preset'
-  ],
-  plugins,
-  'env': {
-    'development': {
-      'plugins': ['dynamic-import-node']
-    }
-  },
   configureWebpack: {
     resolve: {
       alias: {
@@ -30,11 +20,11 @@ module.exports = {
           '^/api': '/'
         }
       },
-      '/miguapi': {
+      '/migu': {
         target: 'http://49.232.192.248:8849',
         changeOrigin: true,
         pathRewrite: {
-          '^/miguapi': '/'
+          '^/migu': '/'
         }
       }
     }
