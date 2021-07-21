@@ -1,0 +1,285 @@
+@charset "utf-8";
+/*!
+ * @名称：base.css
+ * @功能：1、重设浏览器默认样式
+ *       2、设置通用原子类
+ */
+/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
+html,
+body {
+  height: 100%;
+}
+html {
+  background: white;
+  color: black;
+  font-size: 15px;
+  --body-bgcolor: #fff;
+  --light-bgcolor: #f5f5f5;
+  --font-color: #4a4a4a;
+  --font-color-shallow: #404040;
+  --font-color-white: #333333;
+  --font-color-grey: #5c5c5c;
+  --font-color-grey2: #909090;
+  --font-color-grey-shallow: #bebebe;
+  --border: #f2f2f1;
+  --scrollbar-color: #d0d0d0;
+  --round-hover-bgcolor: #ebebeb;
+  --stripe-bg: #fafafa;
+  --shallow-theme-bgcolor: #fdf6f5;
+  --shallow-theme-bgcolor-hover: #fbedec;
+  --header-bgcolor: #f9f9f9;
+  --header-font-color: #4a4a4a;
+  --header-input-color: #4a4a4a;
+  --header-input-bgcolor: #ededed;
+  --header-input-placeholder-color: #bebebe;
+  --menu-bgcolor: #ededed;
+  --menu-item-hover-bg: #e7e7e7;
+  --menu-item-active-bg: #e2e2e2;
+  --player-bgcolor: #f9f9f9;
+  --playlist-bgcolor: #fff;
+  --playlist-hover-bgcolor: #efefef;
+  --search-bgcolor: #fff;
+  --progress-bgcolor: #f5f5f5;
+  --input-color: #4a4a4a;
+  --input-bgcolor: #ededed;
+  --button-border-color: #d9d9d9;
+  --button-hover-bgcolor: #f5f5f5;
+  --tab-item-color: #7f7f81;
+  --tab-item-hover-color: #343434;
+  --tab-item-active-color: #000;
+  --modal-bg-color: #f9f9f9;
+  --prompt-bg-color: #fff;
+  --song-shallow-grey-bg: #e6e5e6;
+  --red: #d33a31;
+}
+/* 内外边距通常让各个浏览器样式的表现位置不同 */
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td,
+hr,
+button,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  margin: 0;
+  padding: 0;
+}
+/* 要注意表单元素并不继承父级 font 的问题 */
+body,
+button,
+input,
+select,
+textarea {
+  font: 12px \5b8b\4f53, arial, sans-serif;
+}
+input,
+select,
+textarea {
+  font-size: 100%;
+}
+/* 去掉 table cell 的边距并让其边重合 */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* ie bug：th 不继承 text-align */
+th {
+  text-align: inherit;
+}
+/* 去除默认边框 */
+fieldset,
+img {
+  border: none;
+}
+/* ie6 7 8(q) bug 显示为行内表现 */
+iframe {
+  display: block;
+}
+/* 去掉 firefox 下此元素的边框 */
+abbr,
+acronym {
+  border: none;
+  font-variant: normal;
+}
+/* 一致的 del 样式 */
+del {
+  text-decoration: line-through;
+}
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+th,
+var {
+  font-style: normal;
+  font-weight: 500;
+}
+/* 去掉列表前的标识，li 会继承 */
+ol,
+ul {
+  list-style: none;
+}
+/* 对齐是排版最重要的因素，别让什么都居中 */
+caption,
+th {
+  text-align: left;
+}
+/* 来自yahoo，让标题都自定义，适应多个系统应用 */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+  font-weight: 500;
+}
+q:before,
+q:after {
+  content: "";
+}
+/* 统一上标和下标 */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sup {
+  top: -0.5em;
+}
+sub {
+  bottom: -0.25em;
+}
+/* 让链接在 hover 状态下显示下划线 */
+a:hover {
+  text-decoration: underline;
+}
+/* 默认不显示下划线，保持页面简洁 */
+ins,
+a {
+  text-decoration: none;
+}
+/* 去除 ie6 & ie7 焦点点状线 */
+a:focus,
+*:focus {
+  outline: none;
+}
+/* 清除浮动 */
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+  overflow: hidden;
+}
+.clearfix {
+  zoom: 1; /* for ie6 & ie7 */
+}
+.clear {
+  clear: both;
+  display: block;
+  font-size: 0;
+  height: 0;
+  line-height: 0;
+  overflow: hidden;
+}
+/* 设置显示和隐藏，通常用来与 js 配合 */
+.hide {
+  display: none;
+}
+.block {
+  display: block;
+}
+/* 设置浮动，减少浮动带来的 bug */
+.fl,
+.fr {
+  display: inline;
+}
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+/*@font-face {*/
+/*  font-family: "iconfont";*/
+/*  src: url("../icon/iconfont.eot?t=1612707207472"); !* IE9 *!*/
+/*  src: url("../icon/iconfont.eot?t=1612707207472#iefix")*/
+/*      format("embedded-opentype"),*/
+/*    !* IE6-IE8 *!*/
+/*      url("data:application/x-font-woff2;charset=utf-8;base64,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")*/
+/*      format("woff2"),*/
+/*    url("../icon/iconfont.woff?t=1612707207472") format("woff"),*/
+/*    url("../icon/iconfont.ttf?t=1612707207472") format("truetype"),*/
+/*    !* chrome, firefox, opera, Safari, Android, iOS 4.2+ *!*/
+/*      url("../icon/iconfont.svg?t=1612707207472#iconfont") format("svg"); !* iOS 4.1- *!*/
+/*}*/
+@font-face {
+  font-family: "iconfont"; /* project id 2347759 */
+  src: url("//at.alicdn.com/t/font_2347759_bwu7j7x85t.eot");
+  src: url("//at.alicdn.com/t/font_2347759_bwu7j7x85t.eot?#iefix")
+      format("embedded-opentype"),
+    url("//at.alicdn.com/t/font_2347759_bwu7j7x85t.woff2") format("woff2"),
+    url("//at.alicdn.com/t/font_2347759_bwu7j7x85t.woff") format("woff"),
+    url("//at.alicdn.com/t/font_2347759_bwu7j7x85t.ttf") format("truetype"),
+    url("//at.alicdn.com/t/font_2347759_bwu7j7x85t.svg#iconfont") format("svg");
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+/*修改加载颜色*/
+.el-loading-spinner .path {
+  stroke: red !important;
+}
+/*分页颜色*/
+.el-pagination.is-background .el-pager li:not(.disabled).active {
+  background-color: #d33a31 !important;
+  color: #ffffff !important;
+}
+.el-pager li.active {
+  color: red !important;
+}
+.el-pager li:hover {
+  color: red !important;
+}
