@@ -3,25 +3,24 @@ import axios from "axios";
 export function request(config) {
   //创建axios实例
   const instance = axios.create({
-    baseURL: "http://api.ly1520.top",
+    baseURL: "http://123.207.32.32:9001",
     timeout: 6000,
-    withCredentials: true
   });
   //请求拦截器
   instance.interceptors.request.use(
-    config => {
+    (config) => {
       return config;
     },
-    error => {
+    (error) => {
       console.log(error);
     }
   );
   //响应拦截器
   instance.interceptors.response.use(
-    res => {
+    (res) => {
       return res.data;
     },
-    error => {
+    (error) => {
       console.log(error);
     }
   );
