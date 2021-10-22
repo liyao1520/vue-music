@@ -1,4 +1,5 @@
 module.exports = {
+  publicPath: "/vue-music",
   configureWebpack: {
     resolve: {
       alias: {
@@ -7,24 +8,24 @@ module.exports = {
         common: "@/common",
         components: "@/components",
         network: "@/network",
-        views: "@/views",
-      },
-    },
+        views: "@/views"
+      }
+    }
   },
   devServer: {
     proxy: {
-      '/api': {
-        target: 'http://a.ly1520.top',
+      "/api": {
+        target: "http://a.ly1520.top",
         changeOrigin: true,
         pathRewrite: {
-          '^/api': '/'
+          "^/api": "/"
         }
       },
-      '/migu': {
-        target: 'http://49.232.192.248:8849',
+      "/migu": {
+        target: "http://49.232.192.248:8849",
         changeOrigin: true,
         pathRewrite: {
-          '^/migu': '/'
+          "^/migu": "/"
         }
       }
     }
