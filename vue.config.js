@@ -1,4 +1,5 @@
 module.exports = {
+  publicPath:"/vue-music",
   configureWebpack: {
     resolve: {
       alias: {
@@ -7,8 +8,8 @@ module.exports = {
         common: "@/common",
         components: "@/components",
         network: "@/network",
-        views: "@/views"
-      }
-    }
-  }
+        views: "@/views",
+      },
+    },
+  },
 };

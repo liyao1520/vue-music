@@ -2,10 +2,13 @@
   "name": "music",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://liyao1520.github.io/vue-music",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "animate.css": "^4.1.1",
@@ -13,6 +16,7 @@
     "better-scroll": "^2.2.0",
     "core-js": "^3.6.5",
     "element-ui": "^2.4.5",
+    "gh-pages": "^3.2.3",
     "js-file-download": "^0.4.12",
     "vue": "^2.6.11",
     "vue-router": "^3.2.0",

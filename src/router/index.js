@@ -3,7 +3,7 @@ import VueRouter from "vue-router";
 const originalPush = VueRouter.prototype.push;
 
 VueRouter.prototype.push = function push(location) {
-  return originalPush.call(this, location).catch(err => err);
+  return originalPush.call(this, location).catch((err) => err);
 };
 const Recommend = () => import("../views/recommend/Recommend");
 const PlayList = () => import("../views/playlist/playList");
@@ -25,15 +25,15 @@ Vue.use(VueRouter);
 const routes = [
   {
     path: "/",
-    redirect: "/recommend"
+    redirect: "/recommend",
   },
   {
     path: "/recommend",
-    component: Recommend
+    component: Recommend,
   },
   {
     path: "/playlist/:id",
-    component: PlayList
+    component: PlayList,
   },
   {
     path: "/search",
@@ -41,63 +41,63 @@ const routes = [
     children: [
       {
         path: "/",
-        redirect: "songs"
+        redirect: "songs",
       },
       {
         path: "songs",
-        component: SearchSongs
+        component: SearchSongs,
       },
       {
         path: "playlist",
-        component: SearchPlayList
+        component: SearchPlayList,
       },
       {
         path: "mv",
-        component: SearchMv
+        component: SearchMv,
       },
       {
         path: "singer",
-        component: SearchSinger
-      }
-    ]
+        component: SearchSinger,
+      },
+    ],
   },
   {
     path: "/toplist",
-    component: TopList
+    component: TopList,
   },
   {
     path: "/playlists",
-    component: PlayLists
+    component: PlayLists,
   },
   {
     path: "/mv",
-    component: MV
+    component: MV,
   },
   {
     path: "/mv/:id",
-    component: MVPlay
+    component: MVPlay,
   },
   {
     path: "/singer",
-    component: Singer
+    component: Singer,
   },
   {
     path: "/singer/:id",
-    component: SingerInfo
+    component: SingerInfo,
   },
   {
     path: "/login",
-    component: Login
+    component: Login,
   },
   {
     path: "/user",
-    component: User
-  }
+    component: User,
+  },
 ];
 
 const router = new VueRouter({
   mode: "history",
-  base: "/",
-  routes
+  base: "/vue-music",
+  routes,
 });
 export default router;
