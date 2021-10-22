@@ -1,6 +1,7 @@
 {
   "name": "music",
   "version": "0.1.0",
+  "homepage": "http://liyao1520.gitee.io/vue-music",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
