@@ -18,7 +18,7 @@
       style="position: absolute;bottom: 12px; display: flex;width: 320px;text-align: center"
     >
       <span style=" flex: 1">本项目仅用于学习</span>
-      <span style=" flex: 1">2021.02.22</span>
+      <span style=" flex: 1">2021.07.18</span>
     </div>
   </div>
 </template>

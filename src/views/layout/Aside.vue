@@ -20,15 +20,6 @@
       <router-link tag="li" to="/mv"
         ><i class="iconfont">&#xe605;</i>MV</router-link
       >
-      <router-link tag="li" to="/migu">
-        <img
-          src="https://music.migu.cn/favicon.ico"
-          alt=""
-          style="width: 16px; vertical-align: middle"
-        />
-
-        <el-badge value="new"> <span>咪咕音乐</span></el-badge>
-      </router-link>
     </ul>
   </div>
 </template>
@@ -43,7 +34,7 @@ export default {
       } else {
         this.$router.push("/user");
       }
-    },
+    }
   },
   computed: {
     loginInfo() {
@@ -58,8 +49,8 @@ export default {
         }
       }
       return info;
-    },
-  },
+    }
+  }
 };
 </script>
 

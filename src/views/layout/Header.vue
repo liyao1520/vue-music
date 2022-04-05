@@ -79,13 +79,13 @@
 import RouterGo from "@/components/common/RouterGo";
 import Notice from "@/views/notice/Notice";
 import { getHotSearch } from "@/network/api";
-import V from "@/views/version/V12";
+import V from "@/views/version/V11";
 export default {
   name: "Header",
   components: {
     RouterGo,
     Notice,
-    V,
+    V
   },
   data() {
     return {
@@ -93,7 +93,7 @@ export default {
       timer: null,
       noticeIsShow: false,
       hotSearch: null,
-      searchHistory: null,
+      searchHistory: null
     };
   },
   methods: {
@@ -109,7 +109,7 @@ export default {
       if (this.hotSearch) {
         return;
       } else {
-        getHotSearch().then((res) => {
+        getHotSearch().then(res => {
           this.hotSearch = res.result.hots;
         });
       }
@@ -121,8 +121,8 @@ export default {
           this.$router.push({
             path: "/search",
             query: {
-              keywords: this.searchContent,
-            },
+              keywords: this.searchContent
+            }
           });
         }
       }
@@ -144,8 +144,8 @@ export default {
       this.$router.push({
         path: "/search",
         query: {
-          keywords: value,
-        },
+          keywords: value
+        }
       });
     },
     searchHistoryAdd(value) {
@@ -167,7 +167,7 @@ export default {
     clearSearchHistory() {
       localStorage.removeItem("search");
       this.searchHistory = [];
-    },
+    }
   },
   mounted() {
     let version = localStorage.getItem("version");
@@ -177,7 +177,7 @@ export default {
       this.noticeClick();
       localStorage.setItem("version", "1.2");
     }
-  },
+  }
 };
 </script>
 
